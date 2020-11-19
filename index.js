@@ -19,7 +19,10 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(multer({ dest: __dirname+'./uploads/'}).any());
 
-mongoose.connect('mongodb://127.0.0.1:27017/practise',{useNewUrlParser:true});
+// mongoose.connect('mongodb://127.0.0.1:27017/practise',{useNewUrlParser:true});
+mongoose.connect('mongodb+srv://rockon:asdqwe@cluster0.v1ykr.mongodb.net/shoppingPortal?retryWrites=true&w=majority',{useNewUrlParser:true});
+
+// mongodb+srv://rockon:<password>@cluster0.v1ykr.mongodb.net/<dbname>?retryWrites=true&w=majority
 
 const connection = mongoose.connection;
 connection.once('open',function(){
